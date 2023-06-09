@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./Backgrounds/logopequeño.png"> 
+    <link rel="Stylesheet" href="css.css" type="text/css" />
+    <title>Game Center</title>
+  </head>
+  <body id="body" style="background-color: rgb(0, 0, 0);">
+    <form class="form" id="formulario" style="display: none;">
+      <div class="title">¡Cuentanos que tal!</div>
+      <input type="text" placeholder="Correo electronico" class="input">
+      <textarea placeholder="Mensaje"></textarea> 
+      <button>Enviar</button>
+  </form>
+  <button class="learn-more" id="botonvalorar" onclick="mostrarFormulario()">
+    <span class="circle" aria-hidden="true">
+    <span class="icon arrow"></span>
+    </span>
+    <span class="button-text">Valoranos!</span>
+  </button>
+    <p id="puntuaciontitulo" style="display: none;">Puntuación</p>
+    <div id="tableropuntuacion" style="display: none;" >
+      <div id="celda1">
+        <p id="puntuacion1"> 0</p>
+      </div>
+    </div>
+    <div id="logotipoindex"></div>
+    <div id="divtexto" onmouseover="audioenter()">
+    <p id="texto">ENTRAR</p>
+    </div>
+
+    <div id="pantallatuto" style="display: none;">
+      <p id="p1">TUTORIAL</p>
+      <div id="cnegro"></div>
+      <div id="cuadro1">
+        <p id="p2">Dedicate a ganar puntos, si llegas al maximo obtendras recompensas</p>
+      </div>
+
+      <img id="tecla" src="./Backgrounds/otratecla.png">
+      <img id="espacio" src="./Backgrounds/teclaespacio.png">
+      <div id="cuadro2">
+      <p id="p3">Controles</p>
+      <p id="p4">Utiliza las teclas de derecha e izquierda, espacio para disparar</p>
+     </div>
+     <p id="p5">No olvides escoger la nave!</p>
+     <img id="flechatuto" src="./Backgrounds/flechatuto.png">
+     <div id="botonempezar" onmouseover="elegirJuego()" style="display: none;">
+      <p id="textoboton" style="display: none;" >Empezar</p>
+     </div>
+     <div id="botonempezararka" onmouseover="elegirJuego()" style="display: none;">
+      <p id="textobotonarka" style="display: none;" >Empezar</p>
+     </div>
+    </div>
+    <div id="volver" onmouseover="elegirJuego()" style="display: none;"></div>
+    <p id="textvolver" style="display: none;">Volver</p>
+
+    <div id="containermenuarka">
+  
+      <div id="a1" class="pala1" onclick="activarmenuarka()" onmouseover="audioSeleccion()">
+    
+        <div id="imskin1arka" style="background-image: url(./Backgrounds/flechamenu.png); background-size: cover;"></div>
+        <div id="imskin1arka" style="flex-grow: 1; background-image: url(./Backgrounds/palaArkanoid.png); background-position: center; background-size: 40%;  background-repeat: no-repeat;"></div>
+      </div>
+      
+      <div id="a2" class="pala2" onclick="activarmenuarka()" onmouseover="audioSeleccion()">
+        <div id="bloqueo2a"></div>
+        <div id="imskin1arka" style="background-image: url(./Backgrounds/flechamenu.png); background-size: cover;"></div>
+        <div id="imskin1arka" style="flex-grow: 1; background-image: url(./Backgrounds/palaazul.png); background-position: center; background-size: 50%;  background-repeat: no-repeat;"></div>
+        <img src="./Backgrounds/candado.png" id="candado1a" style="display: none;">
+      </div>
+      <div id="a3" class="pala3" onclick="activarmenuarka()" onmouseover="audioSeleccion()">
+        <div id="bloqueo3a"></div>
+        <div id="imskin1arka" style="background-image: url(./Backgrounds/flechamenu.png); background-size: cover;"></div>
+        <div id="imskin1arka" style="flex-grow: 1; background-image: url(./Backgrounds/palabarra.png); background-position: center; background-size: contain; background-repeat: no-repeat;"></div>
+        <img src="./Backgrounds/candado.png" id="candado2a" style="display: none;">
+      </div>
+      <div id="a4" class="pala4" onclick="activarmenuarka()" onmouseover="audioSeleccion()">
+        <div id="bloqueo4a"></div>
+        <div id="imskin1arka" style="background-image: url(./Backgrounds/flechamenu.png); background-size: cover;"></div>
+        <div id="imskin1arka" style="flex-grow: 1; background-image: url(./Backgrounds/palalila.png); background-position: center; background-size: 50%; background-repeat: no-repeat;"></div>
+        <img src="./Backgrounds/candado.png" id="candado3a" style="display: none;">
+      </div>
+      <div id="a5" class="pala5" onclick="activarmenuarka()" onmouseover="audioSeleccion()">
+        <div id="bloqueo5a"></div>
+        <div id="imskin1arka" style="background-image: url(./Backgrounds/flechamenu.png); background-size: cover;"></div>
+        <div id="imskin1arka" style="flex-grow: 1; background-image: url(./Backgrounds/palaroja.png); background-position: center; background-size: 50%; background-repeat: no-repeat;"></div>
+        <img src="./Backgrounds/candado.png" id="candado4a" style="display: none;">
+      </div>
+      <div id="a6" class="pala6" onclick="activarmenuarka()" onmouseover="audioSeleccion()">
+        <div id="bloqueo6a"></div>
+        <div id="imskin1arka" style="background-image: url(./Backgrounds/flechamenu.png); background-size: cover;"></div>
+        <div id="imskin1arka" style="flex-grow: 1; background-image: url(./Backgrounds/palapurpura.png); background-position: center; background-size: 50%; background-repeat: no-repeat;"></div>
+        <img src="./Backgrounds/candado.png" id="candado5a" style="display: none;">
+      </div>
+    </div>
+
+    <div id="containermenuspace">
+      <div id="c1" class="nave1" onclick="mostrar()" onmouseover="audioSeleccion()"> 
+        <div id="imskin1" style="background-image: url(./Backgrounds/flechamenu.png); background-size: cover;"></div>
+        <div id="imskin1" style="flex-grow: 1; background-image: url(./Backgrounds/menunave2.png); background-position: center; background-size: contain; background-repeat: no-repeat;"></div>
+      </div>
+      <div id="c2" class="nave2" onclick="mostrar()" onmouseover="audioSeleccion()">
+        <div id="bloqueo2"></div>
+        <div id="imskin1" style="background-image: url(./Backgrounds/flechamenu.png); background-size: cover;"></div>
+        <div id="imskin1" style="flex-grow: 1; background-image: url(./Backgrounds/menunave1.png); background-position: center; background-size: contain; background-repeat: no-repeat;"></div>
+      <img src="./Backgrounds/candado.png" id="candado1" style="display: none;">
+      </div>
+      <div id="c3" class="nave3" onclick="mostrar()" onmouseover="audioSeleccion()">
+        <div id="bloqueo3"></div>
+        <div id="imskin1" style="background-image: url(./Backgrounds/flechamenu.png); background-size: cover;"></div>
+        <div id="imskin1" style="flex-grow: 1; background-image: url(./Backgrounds/menunave3.png); background-position: center; background-size: contain; background-repeat: no-repeat;"></div>
+        <img src="./Backgrounds/candado.png" id="candado2" style="display: none;">
+      </div>
+      <div id="c4" class="nave4" onclick="mostrar()" onmouseover="audioSeleccion()">
+        <div id="bloqueo4"></div>
+        <div id="imskin1" style="background-image: url(./Backgrounds/flechamenu.png); background-size: cover;"></div>
+        <div id="imskin1" style="flex-grow: 1; background-image: url(./Backgrounds/menunave4.png); background-position: center; background-size: contain; background-repeat: no-repeat;"></div>
+        <img src="./Backgrounds/candado.png" id="candado3" style="display: none;">
+      </div>
+      <div id="c5" class="nave5" onclick="mostrar()" onmouseover="audioSeleccion()">
+        <div id="bloqueo5"></div>
+        <div id="imskin1" style="background-image: url(./Backgrounds/flechamenu.png); background-size: cover;"></div>
+        <div id="imskin1" style="flex-grow: 1; background-image: url(./Backgrounds/menunave5.png); background-position: center; background-size: contain; background-repeat: no-repeat;"></div>
+        <img src="./Backgrounds/candado.png" id="candado4" style="display: none;">
+      </div>
+
+      <div id="c6" class="nave6" onclick="mostrar()" onmouseover="audioSeleccion()">
+        <div id="bloqueo6"></div>
+        <div id="imskin1" style="background-image: url(./Backgrounds/flechamenu.png); background-size: cover;"></div>
+        <div id="imskin1" style="flex-grow: 1; background-image: url(./Backgrounds/menunave6.png); background-position: center; background-size: contain; background-repeat: no-repeat;"></div>
+        <img src="./Backgrounds/candado.png" id="candado5" style="display: none;">
+      </div>
+    </div>
+
+    <audio id="AudioSpace" src="./Musica/M1.mp3"></audio>
+    <audio id="AudioSpace2" src="./Musica/Cancion1.mp3"></audio>
+    <audio id="shoot" src="./Musica/shoot.wav"></audio>
+    <audio id="gameoverarka" src="./Musica/overarka.mp3"></audio>
+    <audio id="gameoverspace" src="./Musica/gameoverspace.wav"></audio>
+    <audio id="boton1" src="./Musica/boton1.mp3"></audio>
+    <audio id="boton2" src="./Musica/boton2.mp3"></audio>
+    <audio id="seleccionnave" src="./Musica/seleccionarnave.mp3"></audio>
+    <audio id="clicknave" src="./Musica/clicknave.mp3"></audio>
+    <audio id="seleccionjuego" src="./Musica/seleccionjuego.mp3"></audio>
+    <audio id="perdervida" src="./Musica/perdervida.mp3"></audio>
+    <audio id="enter" src="./Musica/enter.mp3"></audio>
+    <audio id="desbloqueo" src="./Musica/Desbloquear.mp3"></audio>
+    <audio id="audioboss" src="./Musica/bossfinalspace.mp3"></audio>
+    
+    <div id="container"  style="display: none;">
+    <canvas id="canvas" width="800" height="600" ></canvas>
+    <div id="canvas2">
+      <button id="Play" style="display: none;">Musica: On</button>
+      <button id="Play2" style="display: none;">Musica: On</button>
+      <div id="boton1"></div>
+      <div id="boton2"></div>
+      <div id="textovidas" style="display: none;">VIDAS</div>
+        <div id="contador" style="display: none;"></div>
+      <div id="boton3"></div>
+      <div id="baseboton1"></div>
+      <div id="boton4"></div>
+      <div id="boton5"></div>
+      <div id="boton6"></div>
+      <div id="baseboton2"></div>
+    </div>
+    <div id="palo1">
+      <div id="bola1"></div>
+    </div>
+    <div id="palo2">
+      <div id="bola2"></div>
+    </div>
+    <div id="canvas4"><div>
+    <div id="containerjuegos">
+    <div id="canvas5" onclick="entrarJuego(), activarmenuarka()" onmouseover="elegirJuego()" style="background-image: url('Backgrounds/arkanoid.jpg'); background-size: cover;"></div>
+    <div id="canvas6" onclick="cargarSpaceInvaders(), activarMenu()" onmouseover="elegirJuego()" style="background-image: url('Backgrounds/space.png'); background-size: cover;"></div>
+  </div>
+  </div>
+  <div id="perdiste" style="display: none;" >
+  <p>GAME OVER</p>
+  <button id="Reiniciar" onmouseover="elegirJuego()">Reiniciar</button></div>
+  <div id="ganaste" style="display: none;" >
+    <p>YOU WIN</p>
+    <button id="siguientenivel" onmouseover="elegirJuego()">Siguiente nivel</button></div>
+    <div id="divdesbloquear" style="display: none;" >
+      <p id="textonave">NAVE DESBLOQUEADA!</p>
+      <div id="naverotacion">
+        <img id="nuevasnaves">
+      </div>
+     </div>
+    <script id="scriptl" src="main.js"></script>
+    <div id="contadorpuntos" style="display: none;">Puntos:0</div>
+    <div id="niveles" style="display: none;"> Nivel: 1</div>
+  </body>
+</html>

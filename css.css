@@ -1,0 +1,1340 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
+body {
+  overflow-x: hidden;
+}
+
+#volver {
+  position: absolute;
+  height: 30px;
+  width: 30px;
+
+  transition: transform 0.3s;
+  margin-left: 1em;
+  margin-top: 3em;
+  background-image: url(Backgrounds/flecha.png);
+  background-size: cover;
+}
+
+#volver:hover {
+  transform: scale(1.2);
+}
+
+#textvolver {
+  position: absolute;
+  color: white;
+  margin-top: 3.6em;
+  margin-left: 3.5em;
+  font-family: "Press Start 2P", cursive;
+}
+
+#Play {
+  border-radius: 3px;
+  position: absolute;
+  margin-top: 11em;
+  margin-left: 26.5em;
+}
+#Play2 {
+  border-radius: 3px;
+  position: absolute;
+  margin-top: 11em;
+  margin-left: 26.5em;
+}
+#texto {
+  position: absolute;
+  font-family: "Press Start 2P", cursive;
+  letter-spacing: 20px;
+  z-index: 50;
+  margin-left: 8.8em;
+  margin-top: 1.1em;
+  color: rgb(0, 0, 0);
+}
+
+#divtexto {
+  border-radius: 50%;
+  height: 3em;
+  margin-left: 32em;
+  background-color: white;
+  margin-top: 6em;
+  width: 30em;
+  border: 1px solid white;
+}
+#divtexto:hover {
+  transform: scale(1.2);
+}
+#divtexto:hover #texto {
+  font-weight: 900;
+}
+
+#logotipoindex {
+  width: 40em;
+  height: 20em;
+  background-color: rgb(0, 0, 0);
+  border: 1px solid black;
+  margin-left: 27em;
+  margin-top: -1em;
+  background-image: url("./Backgrounds/logotipo.png");
+  background-position: top center;
+}
+#body {
+  animation: fade 3s ease-in-out forwards;
+}
+
+@keyframes mover {
+  0% {
+    transform: perspective(500px) translateZ(0);
+  }
+  50% {
+    transform: perspective(1000px) translateZ(50px);
+  }
+  100% {
+    transform: perspective(1000px) translateZ(100);
+  }
+}
+
+#canvas {
+  border-top-left-radius: 5%;
+  border-top-right-radius: 5%;
+  border: 15px solid black;
+  position: absolute;
+  top: 4.3%;
+  left: 27.4%;
+  width: 45vw;
+  height: 65vh;
+  transform: translate(-50%, -70%);
+  max-width: 100%;
+  max-height: 100%;
+  background-image: url("Backgrounds/AdobeStock_433842766_Preview-transformed.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  outline: 7px solid rgb(186, 194, 193);
+  /* transform: translateX(-200%);*/
+  animation: aparecer 1s forwards;
+}
+
+#jugador {
+  display: none;
+}
+#canvas2 {
+  transform: perspective(600px) rotateX(40deg) scale(1);
+  position: absolute;
+  margin-left: 24.5vw;
+  margin-top: 70vh;
+  width: 51vw;
+  height: 200px;
+  background-color: black;
+  border: 2px solid rgb(108, 26, 208);
+}
+#contador {
+  position: absolute;
+  margin-top: 3em;
+  margin-left: 18em;
+  height: 40px;
+  width: 60px;
+  border: 1px solid rgb(255, 255, 255);
+  background-color: rgb(130, 90, 163);
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 90%;
+}
+
+#textovidas {
+  font-family: "Press Start 2P", cursive;
+  position: absolute;
+  color: white;
+  margin-left: 21.8em;
+  margin-top: 7em;
+  letter-spacing: 1px;
+}
+
+#canvas4 {
+  position: absolute;
+  height: 58px;
+  width: 57vw;
+  background-color: rgb(186, 194, 193);
+  margin-left: 21.5vw;
+  margin-top: 96vh;
+  border: 2px solid rgb(108, 26, 208);
+}
+
+#canvas5 {
+  position: absolute;
+  width: 90px;
+  background-color: white;
+  height: 90px;
+  margin-top: 35vh;
+  margin-left: 35vw;
+  transform: perspective(800px) rotateY(25deg) scale(0.9) rotateX(10deg);
+  opacity: 0;
+  transition: 0.6s ease all;
+  animation: fade 3s ease-in-out forwards;
+}
+#canvas5:hover {
+  transform: perspective(800px) rotateY(-15deg) translateY(-50px) rotateX(10deg)
+    scale(1);
+  filter: blur(0);
+  opacity: 1;
+  transition: 0.6s ease all;
+  transition: 0.6s ease-out all;
+}
+
+#canvas6 {
+  position: absolute;
+  width: 90px;
+  background-color: white;
+  height: 90px;
+  margin-top: 35vh;
+  margin-left: 50vw;
+  transform: perspective(800px) rotateY(25deg) scale(0.9) rotateX(10deg);
+  opacity: 0;
+  transition: 0.6s ease all;
+  animation: fade 3s ease-in-out forwards;
+}
+#canvas6:hover {
+  transform: perspective(800px) rotateY(-15deg) translateY(-50px) rotateX(10deg)
+    scale(1);
+  filter: blur(0);
+  opacity: 1;
+  transition: 0.6s ease all;
+  transition: 0.6s ease-out all;
+}
+
+/*Animacion para los divs de los juegos*/
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#containerjuegos {
+  position: absolute;
+  margin-left: -260px;
+  margin-top: -100vh;
+}
+
+#container {
+  animation: fade 3s ease-in-out forwards;
+  margin-top: -30px;
+}
+
+#boton1 {
+  animation-duration: 1s;
+  animation-name: mover;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  position: absolute;
+  margin-top: 3vh;
+  height: 60px;
+  width: 60px;
+  margin-left: 40vw;
+  border-radius: 100%;
+  background-color: rgb(248, 255, 36);
+}
+#boton2 {
+  animation-duration: 1s;
+  animation-name: mover;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  position: absolute;
+  margin-top: 12.8vh;
+  height: 60px;
+  width: 60px;
+  margin-left: 37vw;
+  border-radius: 100%;
+  background-color: rgb(60, 239, 44);
+}
+#boton3 {
+  animation-duration: 1s;
+  animation-name: mover;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  position: absolute;
+  margin-top: 13vh;
+  height: 60px;
+  width: 60px;
+  margin-left: 42vw;
+  border-radius: 100%;
+  background-color: rgb(249, 40, 40);
+}
+
+#boton4 {
+  animation-duration: 1s;
+  animation-name: mover;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  position: absolute;
+  margin-top: 3vh;
+  height: 60px;
+  width: 60px;
+  margin-left: 7vw;
+  border-radius: 100%;
+  background-color: rgb(248, 255, 36);
+}
+#boton5 {
+  animation-duration: 1s;
+  animation-name: mover;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  position: absolute;
+  margin-top: 12.8vh;
+  height: 60px;
+  width: 60px;
+  margin-left: 4vw;
+  border-radius: 100%;
+  background-color: rgb(60, 239, 44);
+}
+#boton6 {
+  animation-duration: 1s;
+  animation-name: mover;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  position: absolute;
+  margin-top: 13vh;
+  height: 60px;
+  width: 60px;
+  margin-left: 9vw;
+  border-radius: 100%;
+  background-color: rgb(249, 40, 40);
+}
+
+#palo1 {
+  transform: perspective(800px) rotateY(-15deg) rotateX(10deg);
+  position: absolute;
+  width: 10px;
+  height: 30px;
+  margin-left: 57.5vw;
+  margin-top: 81vh;
+  background-color: rgb(2, 0, 36);
+
+  transition: transform 0.5s ease-in-out;
+}
+
+#bola1 {
+  filter: brightness(1.4);
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  margin-left: -1vw;
+  margin-top: -4vh;
+  border-radius: 100%;
+  background-color: rgb(222, 76, 71);
+}
+
+#baseboton1 {
+  position: absolute;
+  margin-top: 9vh;
+  height: 60px;
+  width: 60px;
+  margin-left: 15.5vw;
+  border-radius: 100%;
+  border: 1px solid white;
+  background-color: rgb(180, 74, 74);
+}
+
+#palo2 {
+  transform: perspective(800px) rotateY(-15deg) rotateX(10deg);
+  position: absolute;
+  width: 10px;
+  height: 30px;
+  margin-left: 42vw;
+  margin-top: 81vh;
+  background-color: rgb(2, 0, 36);
+  transition: transform 0.5s ease-in-out;
+}
+#bolita1 {
+  width: 34px;
+  height: 10px;
+  background-color: rgb(180, 74, 74);
+  position: absolute;
+  border-radius: 100%;
+  margin-top: 37.5em;
+  margin-left: 39.4em;
+  z-index: 90;
+}
+#bolita2 {
+  width: 34px;
+  height: 10px;
+  background-color: rgb(180, 74, 74);
+  position: absolute;
+  border-radius: 100%;
+  margin-top: 37.5em;
+  margin-left: 54.5em;
+  z-index: 90;
+}
+#bola2 {
+  filter: brightness(1.4);
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  margin-left: -1vw;
+  margin-top: -4vh;
+  border-radius: 100%;
+  background-color: rgb(222, 76, 71);
+}
+#baseboton2 {
+  position: absolute;
+  margin-top: 9vh;
+  height: 60px;
+  width: 60px;
+  margin-left: 31.2vw;
+  border-radius: 100%;
+  border: 1px solid white;
+  background-color: rgb(180, 74, 74);
+}
+#ganaste {
+  position: absolute !important;
+  margin-left: 2.2em;
+  margin-top: -30em;
+  height: 10em;
+  width: 50em;
+  background-color: rgb(0, 0, 0);
+  opacity: 0;
+  transform: translateX(-1 00%);
+  animation: aparecer 1s forwards;
+  z-index: 100;
+  border-radius: 50%;
+}
+#ganaste p {
+  margin-left: 3em;
+  margin-top: 1em;
+  font-size: 50px;
+  letter-spacing: 20px;
+  color: white;
+  font-family: "Press Start 2P", cursive;
+  opacity: 0;
+  transform: translateX(-100%);
+  animation: aparecer 1s forwards;
+}
+
+#perdiste {
+  position: absolute !important;
+  margin-left: 2.2em;
+  margin-top: -30em;
+  height: 10em;
+  width: 50em;
+  background-color: rgb(0, 0, 0);
+  opacity: 0;
+  transform: translateX(-1 00%);
+  animation: aparecer 1s forwards;
+  z-index: 100;
+  border-radius: 50%;
+}
+#perdiste p {
+  margin-left: 2em;
+  margin-top: 1em;
+  font-size: 50px;
+  letter-spacing: 20px;
+  color: white;
+  font-family: "Press Start 2P", cursive;
+  opacity: 0;
+  transform: translateX(-100%);
+  animation: aparecer 1s forwards;
+}
+#perdiste2 {
+  position: absolute !important;
+  margin-left: 2.2em;
+  margin-top: -30em;
+  height: 10em;
+  width: 50em;
+  background-color: rgb(0, 0, 0);
+  opacity: 0;
+  transform: translateX(-1 00%);
+  animation: aparecer 1s forwards;
+  z-index: 100;
+  border-radius: 50%;
+}
+#perdiste2 p {
+  margin-left: 2em;
+  margin-top: 1em;
+  font-size: 50px;
+  letter-spacing: 20px;
+  color: white;
+  font-family: "Press Start 2P", cursive;
+  opacity: 0;
+  transform: translateX(-100%);
+  animation: aparecer 1s forwards;
+}
+
+/*Key frame de la ventana Game Over*/
+@keyframes aparecer {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+#fondo {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+}
+#siguientenivel {
+  font-size: 10px;
+  font-family: "Press Start 2P", cursive;
+  color: black;
+  background-color: white;
+  width: 150px;
+  height: 27px;
+  border-radius: 20%;
+  margin-top: 1.5em;
+  margin-left: 31.5em;
+}
+
+#Reiniciar {
+  font-size: 10px;
+  font-family: "Press Start 2P", cursive;
+  color: black;
+  background-color: white;
+  width: 150px;
+  height: 27px;
+  border-radius: 20%;
+  margin-top: 1.5em;
+  margin-left: 31.5em;
+}
+#Reiniciar2 {
+  font-size: 10px;
+  font-family: "Press Start 2P", cursive;
+  color: black;
+  background-color: white;
+  width: 150px;
+  height: 27px;
+  border-radius: 20%;
+  margin-top: 1.5em;
+  margin-left: 31.5em;
+}
+#contadorpuntos {
+  font-family: "Press Start 2P", cursive;
+  margin-top: -46.5em;
+  margin-left: 47em;
+  position: absolute;
+  color: white;
+  font-size: small;
+}
+#niveles {
+  font-family: "Press Start 2P", cursive;
+  margin-top: -46.5em;
+  margin-left: 9em;
+  position: absolute;
+  color: white;
+  font-size: small;
+}
+
+#pantallatuto {
+  position: absolute;
+  margin-top: 6em;
+  margin-left: 25em;
+  z-index: 300;
+  height: 31em;
+  width: 45em;
+  background-color: black;
+  animation: diamond-in-center 1s forwards;
+}
+#p1 {
+  background-color: white;
+  color: rgb(0, 0, 0);
+  font-family: "Press Start 2P", cursive;
+  margin-left: 19em;
+  margin-top: 5em;
+}
+#p2 {
+  font-size: 14px;
+  color: white;
+  font-family: "Press Start 2P", cursive;
+  margin-top: 2em;
+}
+#p3 {
+  background-color: white;
+  font-size: 14px;
+  color: rgb(0, 0, 0);
+  font-family: "Press Start 2P", cursive;
+}
+#p4 {
+  font-size: 1em;
+  margin-top: 1em;
+  font-size: 14px;
+  color: white;
+  font-family: "Press Start 2P", cursive;
+}
+#p5 {
+  position: absolute;
+  font-size: 1em;
+  margin-left: 13em;
+  margin-top: 19em;
+  font-size: 14px;
+  color: white;
+  font-family: "Press Start 2P", cursive;
+}
+
+#cuadro1 {
+  text-align: center;
+  width: 3em;
+  margin-left: 8em;
+  width: 30em;
+}
+#tecla {
+  position: absolute;
+  margin-left: 7em;
+  margin-top: 4em;
+  background-size: cover;
+  width: 150px;
+}
+#espacio {
+  position: absolute;
+  margin-left: 7em;
+  margin-top: 9em;
+  background-size: cover;
+  width: 150px;
+}
+#cuadro2 {
+  height: 10em;
+  margin-top: 4em;
+  position: absolute;
+  margin-left: 28em;
+  width: 14em;
+  text-align: center;
+}
+#botonempezar {
+  text-align: center;
+  margin-top: 1.5em;
+  margin-left: 38em;
+  width: 5em;
+  height: 2em;
+  background-color: white;
+  border-radius: 10%;
+  transition: transform 0.3s;
+}
+#botonempezar:hover {
+  transform: scale(1.1);
+}
+#botonempezararka {
+  text-align: center;
+  margin-top: 1.5em;
+  margin-left: 38em;
+  width: 5em;
+  height: 2em;
+  background-color: white;
+  border-radius: 10%;
+  transition: transform 0.3s;
+}
+#botonempezararka:hover {
+  transform: scale(1.1);
+}
+#textoboton {
+  margin-left: 0.5em;
+  margin-top: 1em;
+  position: absolute;
+  align-items: center;
+  font-size: 10px;
+  font-family: "Press Start 2P", cursive;
+}
+#textobotonarka {
+  margin-left: 0.5em;
+  margin-top: 1em;
+  position: absolute;
+  align-items: center;
+  font-size: 10px;
+  font-family: "Press Start 2P", cursive;
+}
+
+@keyframes diamond-in-center {
+  from {
+    clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%);
+  }
+  to {
+    clip-path: polygon(-50% 50%, 50% -50%, 150% 50%, 50% 150%);
+  }
+}
+
+[transition-style="in:diamond:center"] {
+  animation: 1.5s cubic-bezier(0.25, 1, 0.3, 1) diamond-in-center both;
+}
+
+#cnegro {
+  background-color: rgb(0, 0, 0);
+  width: 18em;
+  height: 2em;
+  margin-top: -1em;
+  margin-left: 27em;
+}
+
+#flechatuto {
+  margin-top: 4em;
+  width: 10em;
+  height: 10em;
+  margin-left: 18em;
+}
+
+/*-------------------------------CSS DE LOS MENUS----------------------------*/
+#containermenuarka {
+  gap: 10px;
+  left: -250px;
+  margin-top: 6em;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  height: 23em;
+  width: 15em;
+  background-color: rgb(18, 46, 70);
+  transition: transform 0.3s ease;
+}
+
+#containermenuarka.active {
+  transform: translateX(250px);
+}
+
+#a1 {
+  display: flex;
+  width: 100%;
+  height: 30%;
+  background-color: rgb(0, 0, 0);
+}
+#a2 {
+  pointer-events: none;
+  display: flex;
+  width: 100%;
+  height: 30%;
+  background-color: rgb(0, 0, 0);
+}
+#a3 {
+  pointer-events: none;
+  display: flex;
+  width: 100%;
+  height: 30%;
+  background-color: rgb(0, 0, 0);
+}
+#a4 {
+  pointer-events: none;
+  display: flex;
+  width: 100%;
+  height: 30%;
+  background-color: rgb(0, 0, 0);
+}
+#a5 {
+  pointer-events: none;
+  display: flex;
+  width: 100%;
+  height: 30%;
+  background-color: rgb(0, 0, 0);
+}
+#a6 {
+  pointer-events: none;
+  display: flex;
+  width: 100%;
+  height: 30%;
+  background-color: rgb(0, 0, 0);
+}
+#candado1a {
+  margin-top: 0.6em;
+  left: 15em;
+  height: 2em;
+  width: 2em;
+  position: absolute;
+}
+#candado2a {
+  margin-top: 0.6em;
+  left: 15em;
+  height: 2em;
+  width: 2em;
+  position: absolute;
+}
+#bloqueo2a {
+  position: absolute;
+  top: 3.9em;
+  left: 0;
+  width: 100%;
+  height: 14.6%;
+  background-color: rgba(
+    240,
+    48,
+    48,
+    0.5
+  ); /* 0.5 indica la opacidad, puedes ajustarlo según tu preferencia */
+  z-index: 2;
+}
+#candado3a {
+  margin-top: 0.6em;
+  left: 15em;
+  height: 2em;
+  width: 2em;
+  position: absolute;
+}
+#bloqueo3a {
+  position: absolute;
+  top: 7.8em;
+  left: 0;
+  width: 100%;
+  height: 14.6%;
+  background-color: rgba(
+    240,
+    48,
+    48,
+    0.5
+  ); /* 0.5 indica la opacidad, puedes ajustarlo según tu preferencia */
+  z-index: 2;
+}
+#candado4a {
+  margin-top: 0.6em;
+  left: 15em;
+  height: 2em;
+  width: 2em;
+  position: absolute;
+}
+#bloqueo4a {
+  position: absolute;
+  top: 11.8em;
+  left: 0;
+  width: 100%;
+  height: 14.5%;
+  background-color: rgba(
+    240,
+    48,
+    48,
+    0.5
+  ); /* 0.5 indica la opacidad, puedes ajustarlo según tu preferencia */
+  z-index: 2;
+}
+#candado5a {
+  margin-top: 0.6em;
+  left: 15em;
+  height: 2em;
+  width: 2em;
+  position: absolute;
+}
+#bloqueo5a {
+  position: absolute;
+  top: 15.7em;
+  left: 0;
+  width: 100%;
+  height: 14.6%;
+  background-color: rgba(
+    240,
+    48,
+    48,
+    0.5
+  ); /* 0.5 indica la opacidad, puedes ajustarlo según tu preferencia */
+  z-index: 2;
+}
+#bloqueo6a {
+  position: absolute;
+  top: 19.6em;
+  left: 0;
+  width: 100%;
+  height: 14.8%;
+  background-color: rgba(
+    240,
+    48,
+    48,
+    0.5
+  ); /* 0.5 indica la opacidad, puedes ajustarlo según tu preferencia */
+  z-index: 2;
+}
+#a1:hover,
+#a2:hover,
+#a3:hover,
+#a4:hover,
+#a5:hover,
+#a6:hover {
+  border: 1px solid rgb(255, 255, 255);
+}
+
+#imskin1arka {
+  animation-duration: 1s;
+  animation-name: mover;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  margin-left: 5px;
+  margin-top: 5px;
+  height: 80%;
+  width: 15%;
+}
+
+#containermenuspace {
+  left: -250px;
+  gap: 10px;
+  margin-top: 6em;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  height: 23em;
+  width: 15em;
+  background-color: rgb(18, 46, 70);
+  transition: transform 0.3s ease;
+}
+
+#containermenuspace.active {
+  transform: translateX(250px);
+}
+
+#containermenuspace {
+  cursor: pointer;
+}
+#containermenuarka {
+  cursor: pointer;
+}
+
+#c1 {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 30%;
+  background-color: rgb(0, 0, 0);
+  z-index: 1;
+}
+#candado1 {
+  margin-top: 0.6em;
+  left: 15em;
+  height: 2em;
+  width: 2em;
+  position: absolute;
+}
+#bloqueo2 {
+  position: absolute;
+  top: 3.9em;
+  left: 0;
+  width: 100%;
+  height: 14.6%;
+  background-color: rgba(
+    240,
+    48,
+    48,
+    0.5
+  ); /* 0.5 indica la opacidad, puedes ajustarlo según tu preferencia */
+  z-index: 2;
+}
+#candado2 {
+  margin-top: 0.6em;
+  left: 15em;
+  height: 2em;
+  width: 2em;
+  position: absolute;
+}
+#bloqueo3 {
+  position: absolute;
+  top: 7.8em;
+  left: 0;
+  width: 100%;
+  height: 14.6%;
+  background-color: rgba(
+    240,
+    48,
+    48,
+    0.5
+  ); /* 0.5 indica la opacidad, puedes ajustarlo según tu preferencia */
+  z-index: 2;
+}
+#candado3 {
+  margin-top: 0.6em;
+  left: 15em;
+  height: 2em;
+  width: 2em;
+  position: absolute;
+}
+#bloqueo4 {
+  position: absolute;
+  top: 11.8em;
+  left: 0;
+  width: 100%;
+  height: 14.5%;
+  background-color: rgba(
+    240,
+    48,
+    48,
+    0.5
+  ); /* 0.5 indica la opacidad, puedes ajustarlo según tu preferencia */
+  z-index: 2;
+}
+#candado4 {
+  margin-top: 0.6em;
+  left: 15em;
+  height: 2em;
+  width: 2em;
+  position: absolute;
+}
+#bloqueo5 {
+  position: absolute;
+  top: 15.7em;
+  left: 0;
+  width: 100%;
+  height: 14.6%;
+  background-color: rgba(
+    240,
+    48,
+    48,
+    0.5
+  ); /* 0.5 indica la opacidad, puedes ajustarlo según tu preferencia */
+  z-index: 2;
+}
+#candado5 {
+  margin-top: 0.6em;
+  left: 15em;
+  height: 2em;
+  width: 2em;
+  position: absolute;
+}
+#bloqueo6 {
+  position: absolute;
+  top: 19.6em;
+  left: 0;
+  width: 100%;
+  height: 14.8%;
+  background-color: rgba(
+    240,
+    48,
+    48,
+    0.5
+  ); /* 0.5 indica la opacidad, puedes ajustarlo según tu preferencia */
+  z-index: 2;
+}
+
+#c2 {
+  pointer-events: none;
+  display: flex;
+  width: 100%;
+  height: 30%;
+  background-color: rgb(0, 0, 0);
+}
+
+#c3 {
+  pointer-events: none;
+  display: flex;
+  width: 100%;
+  height: 30%;
+  background-color: rgb(0, 0, 0);
+}
+
+#c4 {
+  pointer-events: none;
+  display: flex;
+  width: 100%;
+  height: 30%;
+  background-color: rgb(0, 0, 0);
+}
+
+#c5 {
+  pointer-events: none;
+  display: flex;
+  width: 100%;
+  height: 30%;
+  background-color: rgb(0, 0, 0);
+}
+
+#c6 {
+  pointer-events: none;
+  display: flex;
+  width: 100%;
+  height: 30%;
+  background-color: rgb(0, 0, 0);
+}
+
+#c1:hover,
+#c2:hover,
+#c3:hover,
+#c4:hover,
+#c5:hover,
+#c6:hover {
+  border: 1px solid rgb(255, 255, 255);
+}
+
+#imskin1 {
+  animation-duration: 1s;
+  animation-name: mover;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  margin-left: 5px;
+  margin-top: 5px;
+  height: 80%;
+  width: 15%;
+}
+#puntuaciontitulo {
+  right: -270px;
+  position: absolute;
+  margin-top: 5.6em;
+  margin-left: 75em;
+  color: white;
+  font-family: "Press Start 2P", cursive;
+}
+#puntuaciontitulo.active {
+  transform: translateX(-447px);
+}
+
+#tableropuntuacion {
+  right: -270px;
+  border-radius: 15%;
+  gap: 5px;
+  flex-direction: column;
+  display: flex;
+  position: absolute;
+  margin-top: 7em;
+  margin-left: 75em;
+  width: 16em;
+  height: 2.5em;
+  border: 3px solid rgb(255, 255, 255);
+  background-color: rgb(202, 172, 220);
+  transition: transform 0.3s ease;
+}
+
+#tableropuntuacion.active {
+  transform: translateX(-352px);
+}
+#celda1 {
+  font-family: "Press Start 2P", cursive;
+  width: 100%;
+  height: 100%;
+}
+#puntuacion1 {
+  color: rgb(0, 0, 0);
+  margin-top: 0.7em;
+  margin-left: 0.4em;
+}
+
+.form {
+  margin-top: 10%;
+  left: 40%;
+  position: absolute;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 10px;
+  width: 300px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 30px 30px -30px rgba(27, 26, 26, 0.315);
+  animation: square-in-center 1s forwards;
+}
+
+.form .title {
+  color: rgb(255, 24, 126);
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: -1px;
+  line-height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form input {
+  margin-top: 10px;
+  outline: 0;
+  border: 1px solid rgb(219, 213, 213);
+  padding: 8px 14px;
+  border-radius: 8px;
+  width: 100%;
+  height: 50px;
+}
+
+.form textarea {
+  border-radius: 8px;
+  height: 200px;
+  width: 100%;
+  resize: none;
+  outline: 0;
+  padding: 8px 14px;
+  border: 1px solid rgb(219, 213, 213);
+}
+
+.form button {
+  align-self: flex-end;
+  padding: 8px;
+  outline: 0;
+  border: 0;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  background-color: rgb(255, 24, 126);
+  color: #fff;
+  cursor: pointer;
+}
+
+button {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  vertical-align: middle;
+  text-decoration: none;
+  background: transparent;
+  padding: 0;
+  font-size: inherit;
+  font-family: inherit;
+}
+
+button.learn-more {
+  position: absolute;
+  margin-top: 30px;
+  left: 86%;
+  position: relative;
+  width: 12rem;
+  height: auto;
+}
+
+button.learn-more .circle {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: relative;
+  display: block;
+  margin: 0;
+  width: 3rem;
+  height: 3rem;
+  background: rgb(255, 24, 126);
+  border-radius: 1.625rem;
+}
+
+button.learn-more .circle .icon {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background: #fff;
+}
+
+button.learn-more .circle .icon.arrow {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  left: 0.625rem;
+  width: 1.125rem;
+  height: 0.125rem;
+  background: none;
+}
+
+button.learn-more .circle .icon.arrow::before {
+  position: absolute;
+  content: "";
+  top: -0.29rem;
+  right: 0.0625rem;
+  width: 0.625rem;
+  height: 0.625rem;
+  border-top: 0.125rem solid #fff;
+  border-right: 0.125rem solid #fff;
+  transform: rotate(45deg);
+}
+
+button.learn-more .button-text {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: relative;
+
+  top: -30px;
+  left: 4px;
+  right: 0;
+  bottom: 0;
+  padding: 0.75rem 0;
+  margin: 0 0 0 1.85rem;
+  color: #eaeaea;
+  font-weight: 100;
+  line-height: 1.6;
+  font-size: 11px;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Press Start 2P", cursive;
+}
+
+button:hover .circle {
+  width: 100%;
+}
+
+button:hover .circle .icon.arrow {
+  background: #fff;
+  transform: translate(1rem, 0);
+}
+
+button:hover .button-text {
+  color: #fff;
+}
+
+@keyframes square-in-center {
+  from {
+    clip-path: inset(100% 100% 100% 100%);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+[transition-style="in:square:center"] {
+  animation: 2.5s cubic-bezier(0.25, 1, 0.3, 1) square-in-center both;
+}
+
+#divdesbloquear {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  left: 10px;
+  position: absolute !important;
+  margin-left: 52em;
+  margin-top: -30em;
+  height: 10em;
+  width: 20em;
+  background-color: rgb(0, 0, 0);
+  animation: circle-in-center 1s forwards;
+  border-radius: 20%;
+
+}
+
+#divdesbloquear p {
+  margin-left: 1.5em;
+  margin-top: 1em;
+  font-size: 15px;
+  color: white;
+  font-family: "Press Start 2P", cursive;
+  opacity: 0;
+  animation: aparecer 1s forwards;
+}
+#Reiniciar {
+  font-size: 10px;
+  font-family: "Press Start 2P", cursive;
+  color: black;
+  background-color: white;
+  width: 150px;
+  height: 27px;
+  border-radius: 20%;
+  margin-top: 1.5em;
+  margin-left: 31.5em;
+}
+#naverotacion {
+  margin-top: 1.5em;
+  width: 5em;
+  height: 5em;
+}
+#nuevasnaves {
+  margin-top: -.3em;
+  margin-left: 7em;
+  width: 100%;
+  animation: girar 3s infinite linear;
+}
+
+/*Desbloqueo animacion*/
+@keyframes circle-in-center {
+  from {
+    clip-path: circle(0%);
+  }
+  to {
+    clip-path: circle(125%);
+  }
+}
+
+[transition-style="in:circle:center"] {
+  animation: 2.5s cubic-bezier(0.25, 1, 0.3, 1) circle-in-center both;
+}
+
+/*Girar imagen desbloqueo*/
+@keyframes girar {
+  0% {
+    transform: rotate(0deg); /* La imagen está en su posición inicial */
+  }
+  100% {
+    transform: rotate(
+      360deg
+    ); /* La imagen completa una rotación de 360 grados */
+  }
+}
